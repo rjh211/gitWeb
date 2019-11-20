@@ -1,0 +1,145 @@
+Google Table 작성 =>    
+전역변수 추가 시 - 
+    1. router.js에 import googlechart from 'vue-google-chart'
+    2. Vue.use(googlechart)
+local에서 사용 시 - example on GChart_Table.vue
+    1. import {Gchart} from 'vue-Google-chart'
+    2. data(){return } return 에서 옵션, chartData 설정
+    3. export default의 components에 Gchart 추가
+    4. template에 type, data, options 추가하여 선언
+
+router 추가 
+    1. npm i router
+    2. vue add router
+
+vuetify 추가
+    1. npm i vuetify
+    2. vue add vuetify
+    3. yarn serve 
+        or npm run serve
+
+Google chart type
+    1.  GeoChart
+    2.  ScatterChart
+    3.  ColumnChart
+    4.  Histgram
+    5.  BarChart
+    6.  ComboChart
+    7.  AreaChart
+    8.  SteppedAreaChart
+    9.  LineChart
+    10. Table
+
+axios 사용법 =>         frontend Gchart.vue
+    1. npm i axios
+    2. import axios
+    3. export default의 methods 에서 함수작성 
+    4. axios.post(){} 방식으로 
+
+
+postgresql 사용법 =>    backend postgresql.js
+    1. npm i pg
+    2. express router 등록
+    3. router.post 방식으로 응답 함수 작성
+
+axios를 사용하여 postgresql Data 가져오는 methods
+        vue =>
+        axiostest(){
+        axios.post('/Postgresql/Show').then((req)=>{
+          for(var i = 0 ;i<req.data.length;i++)
+          {
+            console.log(req.data[i]);
+          }
+        })
+      }
+axios를 사용하여 frontend -> backend 하는 methods
+    axios.post('/Postgresql/Show',{
+                dateRange : this.range
+            })
+
+EventBus
+    1. parants 에서 Child
+        1) <GoogleTable :msg = PostgreData />
+        2) data 선언
+          data(){
+                return {
+                PostgreData:[]
+                }
+            },
+    2. Child 에서 
+        1) props : { msg : [] }
+        2) <h1>{{msg.data}}</h1> 
+        3) 이런식으로 사용
+
+Data Parse
+    1. Backend => postgresql.js
+        1) /Postgresql/Parse 에서 응답을 받아서 DB와 통신
+        2) response Data 를 사용하여 2중 배열 생성
+
+String to var
+    => eval(Str)
+
+날짜관련 module
+    => vue2-datepicker
+    >> npm install vue2-datepicker
+
+Export default
+    => created(){ }  생성자
+    => watch(){} 값이 변할때마다 이벤트발생
+
+Watch 사용법    ex) GChart_Table.vue
+    Created 내부에 this.$watch('range',()=>{console.log(this.range)})
+    1. data의 range가 변경 되면 
+    2. 함수 실행
+    <date-picker @change="someevent()"></datepicker>    => 값이 변할때마다 someevent() 함수실행
+
+자식 -> 부모 (vue)
+    <부모>
+        <GoogleTable :msg = PostgreData />
+    <자식>
+        props에 등록후 사용     => 자식에서 props에서 msg 등록후 사용
+부모 -> 자식
+    <부모>
+        <Datepicker @childs-evnet = "parentsmethod" />      => childs-event : 이벤트 이름 (자식에서 같은이름 사용해야함)    parantsmethod : 함수
+    <자식>  => 함수로 사용
+        test(){
+            this.$emit('childs-evnet', 'hello')
+        }
+
+전역으로 사용해야할 npm은 router.js에 등록
+
+
+router-link button으로 사용하기
+    => <router-link to = "/test" tag = "button"> test </router-link>
+
+frame 나누기
+    => <frameset>
+            <frame src="@/components/GChart_Date.vue">
+        </frameset>
+
+googlechart 에서 css 사용 하기 => Comformal_Measurement.vue
+        cssClassNames:{
+          tableCell:'testfont'      => <style> .testfont </style>
+        }
+
+google chart table click event 발생     => Comformal_Measurement.vue
+    =>
+            <GChart
+            type="Table"
+            :data="chartData"
+            :options="chartOptions"
+            :events="chartEvents"
+            ref="gChart"/>
+
+            chartEvents:{
+                select: ()=>{
+                const table = this.$refs.gChart.chartObject;
+                const selection = table.getSelection();
+                const onSelectionMeaasge = selection.length !== 0 ? 'row was selected' : 'row was diselected'
+                console.log(onSelectionMeaasge)
+                }
+            }
+
+v-for 예제
+
+<li v-for="(item, index) in items"> {{ parentMessage }} - {{ index }} - {{ item.message }} </li>
