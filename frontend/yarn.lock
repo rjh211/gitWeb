@@ -8204,6 +8204,11 @@ vue-cli-plugin-vuetify@^1.0.2:
     semver "^6.0.0"
     shelljs "^0.8.3"
 
+vue-drag-resize@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/vue-drag-resize/-/vue-drag-resize-1.3.2.tgz#99132a99746c878e4596fad08d36c98f604930a3"
+  integrity sha512-XiSEep3PPh9IPQqa4vIy/YENBpYch2SIPNipcPAEGhaSa0V8A8gSq9s7JQ66p/hiINdnR7f5ZqAkOdm6zU/4Gw==
+
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-2.0.3.tgz#c268c96c6d94cfe3d938a5f7593959b0ca3360d1"
@@ -8476,9 +8481,9 @@ websocket-driver@>=0.5.1:
     websocket-extensions ">=0.1.1"
 
 websocket-extensions@>=0.1.1:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
-  integrity sha512-nqHUnMXmBzT0w570r2JpJxfiSD1IzoI+HGVdd3aZ0yNi3ngvQ4jv1dtHt5VGxfI2yj5yqImPhOK4vmIh2xMbGg==
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.4.tgz#7f8473bc839dfd87608adb95d7eb075211578a42"
+  integrity sha512-OqedPIGOfsDlo31UNwYbCFMSaO9m9G/0faIHj5/dZFDMFqPTcx6UwqyOy3COEaEOg/9VsGIpdqn62W5KhoKSpg==
 
 which-module@^2.0.0:
   version "2.0.0"
