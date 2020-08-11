@@ -53,11 +53,11 @@ router.post('/signup', function(req, response, next) {
 
   let is_duple = false;
 
-  const query = 'SELECT * FROM users.test';           //Query 작성
+  const query = 'SELECT * FROM users.test';           //Query 작성 SELECT* FROM users.test where id = res.rows.id 가 null일경우 회원가입 진행으로 수정 가능
   client.query(query).then(res => {                   //Query 실행
       const Rows = res.rows;
       Rows.map(row => {
-          if (is_duple === false) {             //중복 조건
+          if (is_duple === false) {                   //중복 조건
               if (id === row.id) {
                   is_duple = true;
               }
