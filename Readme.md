@@ -1,3 +1,7 @@
 ### README.md
 
-	- 반갑습니다.
+	- 대시보드.
+	-frontend : vue
+	-backend : nodejs
+	-middleware : express
+	-database : postgresql
