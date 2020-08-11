@@ -5,3 +5,4 @@
 	-backend : nodejs
 	-middleware : express
 	-database : postgresql
+	-chart : googlechart, chartjs
