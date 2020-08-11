@@ -6,3 +6,4 @@
 	-middleware : express
 	-database : postgresql
 	-chart : googlechart, chartjs
+	-통신 : axios
